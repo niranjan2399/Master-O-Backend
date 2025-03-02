@@ -8,7 +8,9 @@ module.exports = {
     if (!metrics?.length)
       return res.status(400).json({ error: "Select at least one metric" });
 
-    const query = `SELECT ${metrics.join(", ")} FROM GameSession LIMIT 15`;
+    const query = `SELECT ${metrics.join(
+      ", "
+    )} FROM GameSession ORDER BY start_time DESC LIMIT 15`;
 
     db.query(query, (err, results) => {
       if (err) return res.status(500).json({ error: "Database error" });
