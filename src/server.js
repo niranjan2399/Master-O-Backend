@@ -9,7 +9,7 @@ const corsOptions = {
   credentials: true,
   origin: [
     "http://localhost:3000",
-    "https://master-o-car-race-game.netlify.app/",
+    "https://master-o-car-race-game.netlify.app",
   ],
 };
 
