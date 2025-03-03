@@ -5,7 +5,15 @@ require("dotenv").config();
 const gameRoutes = require("./routes/gameRoutes");
 const reportRoutes = require("./routes/reportRoutes");
 
-app.use(cors());
+const corsOptions = {
+  credentials: true,
+  origin: [
+    "http://localhost:3000",
+    "https://master-o-car-race-game.netlify.app/",
+  ],
+};
+
+app.use(cors(corsOptions));
 app.use(express.json());
 
 app.use("/game", gameRoutes);
